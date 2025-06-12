@@ -1,5 +1,13 @@
-<div class="valentine-container">
-  <iframe id="background-music" src="https://www.youtube.com/embed/bhXUrS--eFs?autoplay=1&loop=1&playlist=bhXUrS--eFs&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="initial-screen" *ngIf="!isStarted">
+  <button class="play-button" (click)="startExperience()">
+    Play
+  </button>
+</div>
+
+<div class="valentine-container" [class.show]="isStarted">
+  <audio id="background-music" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
 
   <div class="photo-section">
     <img src="assets/couple-photo.jpg" alt="Foto do casal" class="couple-photo">

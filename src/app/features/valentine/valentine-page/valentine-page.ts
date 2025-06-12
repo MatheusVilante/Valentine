@@ -18,6 +18,7 @@ interface TimelineMoment extends Moment {
   styleUrl: './valentine-page.scss'
 })
 export class ValentinePageComponent implements OnInit, OnDestroy {
+  isStarted = false;
   moments: TimelineMoment[] = [
     {
       date: '06/10/2022',
@@ -133,5 +134,15 @@ export class ValentinePageComponent implements OnInit, OnDestroy {
     this.chronoHours = h;
     this.chronoMinutes = min;
     this.chronoSeconds = s;
+  }
+
+  startExperience() {
+    this.isStarted = true;
+    const audio = document.getElementById('background-music') as HTMLAudioElement;
+    if (audio) {
+      audio.play().catch(error => {
+        console.log('Erro ao tocar música:', error);
+      });
+    }
   }
 }

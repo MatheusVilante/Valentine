@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/Valentine/",
               "budgets": [
                 {
                   "type": "initial",
