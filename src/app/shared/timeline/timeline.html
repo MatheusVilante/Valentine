@@ -1,0 +1,12 @@
+<div class="timeline">
+  <div class="timeline-line"></div>
+  <div class="timeline-item" *ngFor="let moment of moments; let i = index" [ngClass]="{'reverse': i % 2 === 1, 'centered': i === moments.length - 1}">
+    <div class="timeline-content">
+      <div class="timeline-date" *ngIf="moment.date">{{ moment.date }}</div>
+      <ng-container *ngIf="moment.image">
+        <img [src]="moment.image" alt="Foto do momento" class="timeline-photo" />
+      </ng-container>
+      <p class="timeline-description">{{ moment.description }}</p>
+    </div>
+  </div>
+</div>
