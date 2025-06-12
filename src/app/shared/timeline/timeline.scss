@@ -1,0 +1,129 @@
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 180px;
+  gap: 32px;
+  z-index: 1;
+  background: transparent;
+
+  &.reverse {
+    flex-direction: row-reverse;
+    .timeline-content {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  &.centered {
+    justify-content: center;
+    margin-top: 60px;
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.timeline-content {
+  position: relative;
+  background: rgba(255, 64, 129, 0.07);
+  border-radius: 16px;
+  padding: 32px 32px 18px 32px;
+  min-width: 220px;
+  max-width: 350px;
+  box-shadow: 0 2px 8px rgba(255, 64, 129, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  z-index: 2;
+  border: 1.5px solid #ffb6d5;
+  margin-top: 32px;
+}
+
+.timeline-date {
+  display: inline-block;
+  background: #ff4081;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: bold;
+  padding: 4px 18px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(255, 64, 129, 0.10);
+  letter-spacing: 1px;
+  align-self: flex-start;
+  position: absolute;
+  left: 50%;
+  top: -32px;
+  transform: translateX(-50%);
+  z-index: 3;
+  border: 2.5px solid #fff;
+}
+
+.timeline-content .timeline-date {
+  align-self: center;
+}
+
+.timeline-item.reverse .timeline-content .timeline-date {
+  align-self: center;
+}
+
+.timeline-item.centered .timeline-content .timeline-date {
+  align-self: center;
+}
+
+.timeline-description {
+  color: #ff4081;
+  font-size: 1.18rem;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  line-height: 1.7;
+  word-break: break-word;
+  text-shadow: 0 1px 0 #fff6fa;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.timeline-photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 16px rgba(255, 64, 129, 0.10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .timeline-item, .timeline-item.reverse {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+  }
+  .timeline-content {
+    align-items: center !important;
+    text-align: center !important;
+    min-width: unset;
+    max-width: 95vw;
+    margin-top: 32px;
+  }
+  .timeline-date {
+    align-self: center !important;
+    margin-bottom: 10px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: -32px !important;
+  }
+}
